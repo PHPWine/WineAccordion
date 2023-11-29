@@ -195,7 +195,7 @@ implements \PHPWineOptimizedHtml\Interfaces\AccordionInterface
    * @since: v2.5.0 wine
    * DT: 11.29.2023 */
   public function accordion() {
-    return $this->accordion();
+    return $this->wine_action();
   }
 
 }
