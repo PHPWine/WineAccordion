@@ -1,0 +1,26 @@
+{
+    "name": "phpwine/wineaccordion",
+    "type": "library",
+    "description": "Component for PHPWine v2.5.0",
+    "keywords": ["accordion"],
+    "homepage": "https://github.com/PHPWine/WineAccordion",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Leinner Zednanref",
+            "email": "syncdevprojects@gmail.com",
+            "homepage": "https://github.com/PHPWine/WineAccordion",
+            "role": "Author and Maintainer"
+        } 
+    ],
+    "autoload" : {
+        "psr-4" : {
+            "PHPWineAccordion\\" : "src/"
+        }    
+     },
+    "require": {
+        
+        "php": ">=8.0"
+        
+    }
+}
