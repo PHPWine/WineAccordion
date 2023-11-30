@@ -4,6 +4,8 @@ WineAccordion a collection snippet for PHPWine v2.5.0 (these features are just a
 ```PHP
 /* Installtion */
 composer require phpwine/wineaccordion 
+
+Source: https://packagist.org/packages/phpwine/wineaccordion
 ```
 
 ```PHP
