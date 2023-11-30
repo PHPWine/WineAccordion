@@ -45,8 +45,9 @@ error_reporting(E_ALL);
 *
 */
 
-class WineAccordion extends \PHPWineOptimizedHtml\Doctrine\Accordion implements
-    \PHPWineOptimizedHtml\Interfaces\AccordionInterface
+class WineAccordion 
+extends \PHPWineOptimizedHtml\Doctrine\Accordion 
+implements \PHPWineOptimizedHtml\Interfaces\AccordionInterface
 {
     public function __construct(array $wine = [])
     {
