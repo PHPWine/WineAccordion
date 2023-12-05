@@ -1,7 +1,7 @@
 {
     "name": "phpwine/wineaccordion",
     "type": "library",
-    "description": "Component for PHPWine v2.5.0",
+    "description": "Accordion App for PHPWine @since v2.5.0",
     "keywords": ["accordion"],
     "homepage": "https://github.com/PHPWine/WineAccordion",
     "license": "MIT",
