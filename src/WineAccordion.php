@@ -2,13 +2,10 @@
 
 namespace PHPWineAccordion;
 
-ini_set("\x64\151\x73\160\154\141\171\x5f\145\162\x72\x6f\162\x73", 1);
-ini_set(
-    "\x64\151\x73\x70\x6c\141\x79\x5f\163\x74\x61\x72\x74\x75\x70\137\x65\162\x72\x6f\x72\x73",
-    1
-);
+ini_set("display_errors", 1);
+ini_set("display_startup_errors", 1);
 error_reporting(E_ALL);
- 
+
 /**
 * @copyright (c) 2023 PHPWine Component Accordion Cooked by nielsoffice
 *
@@ -45,41 +42,89 @@ error_reporting(E_ALL);
 *
 */
 
-class WineAccordion extends \PHPWineOptimizedHtml\Doctrine\Accordion implements
-    \PHPWineOptimizedHtml\Interfaces\AccordionInterface
+class WineAccordion 
+extends \PHPWineOptimizedHtml\Doctrine\Accordion
+implements \PHPWineOptimizedHtml\Interfaces\AccordionInterface
 {
-    public function __construct(array $wine = [])
-    {
-        parent::__construct($wine);
-        if (
-            !wine_compare(
-                $this->icon,
-                "\x43\117\115\120\117\116\x45\x4e\x54\x5f\122\105\107\111\x53\x54\105\x52\105\x44\137\113\105\x59\x5f\101\103\103\x4f\x52\x44\111\x4f\x4e"
-            )
-        ) {
-            throw new \Exception(
-                "\141\x74\164\x65\155\160\164\40\x69\156\166\141\x6c\151\144\x20\153\145\x79\x20\x3a\x20" .
-                    $this->icon .
-                    "\x21"
-            );
-            die();
-        }
-        if (
-            !wine_compare(
-                $this->prefix,
-                "\x43\x4f\x4d\120\117\x4e\x45\x4e\x54\137\x52\105\x47\x49\x53\124\x45\x52\105\104\x5f\x4b\105\131\x5f\120\x52\x45\x46\x49\130"
-            )
-        ) {
-            throw new \Exception(
-                "\x61\x74\x74\x65\x6d\160\164\40\151\156\x76\141\154\151\144\40\153\145\x79\x20\72\40" .
-                    $this->prefix .
-                    "\41"
-            );
-            die();
-        }
-    }
-    public function accordion()
-    {
-        return $this->wine_action();
-    }
+
+  public function __construct(array $wine = [])
+  {
+
+    parent::__construct(
+      $wine
+    );
+
+  /**
+   * --------------------------------------------------------------------------------------------
+   * @condition
+   * @wine_compare function
+   * -------------------------------------------------------------------------------------------- 
+   * check current key and validate if true attributes property 
+   * 
+   * @Defined : return : attemp invalid key! 
+   * @since: v1.0 doctrine
+   * @since: v2.5.0 wine
+   * DT: 11.12.2023 */
+  if ( 
+    !wine_compare(
+ 
+       $this->icon,
+     
+      'COMPONENT_REGISTERED_KEY_COMPONENT') 
+   ) {
+   throw new \Exception("attempt invalid key : ".$this->icon."!");
+   exit;
+  }
+  
+  /**
+   * --------------------------------------------------------------------------------------------
+   * @condition
+   * @wine_compare function
+   * -------------------------------------------------------------------------------------------- 
+   * check current key and validate if true attributes property 
+   * 
+   * @Defined : return : attemp invalid key! 
+   * @since: v1.0 doctrine
+   * @since: v2.5.0 wine
+   * DT: 11.12.2023 */
+  if ( 
+    !wine_compare(
+ 
+       $this->prefix,
+     
+      'COMPONENT_REGISTERED_KEY_PREFIX') 
+   ) {
+   throw new \Exception("attempt invalid key : ".$this->prefix."!");
+   exit;
+  }
+
+
+  if ( 
+    !wine_compare(
+ 
+       $this->hook,
+     
+      'DOCTRINE_REGISTERED_KEY_HOOKS') 
+   ) {
+   throw new \Exception("attempt invalid key : ".$this->hook."!");
+   exit;
+  }
+
+  }
+   
+  /**
+   * --------------------------------------------------------------------------------------------
+   * @method
+   * @public  chaining hook to get accordion
+   * -------------------------------------------------------------------------------------------- 
+   * get accordion 
+   * 
+   * @Defined : accordion hook
+   * @since: v1.0 doctrine
+   * @since: v2.5.0 wine
+   * DT: 11.29.2023 */
+  public function accordion() {
+    return $this->wine_action();
+  }
+
 }
